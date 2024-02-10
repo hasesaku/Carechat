@@ -1,0 +1,25 @@
+{% extends "firstapp/base.html" %}
+{% load static %}  <!-- この行を追加 -->
+
+{% block content %}
+<h1>{{ room.name }}のチャットルーム</h1>
+<div id="chat-room">
+    <!-- チャットルームのメッセージを表示 -->
+    {% for message in messages %}
+    <div class="message">
+        <p>{{ message.user.username }}: {{ message.text }}</p>
+        <button class="like-button" data-message-id="{{ message.id }}">👍</button>
+        <span>{{ message.likes.count }}</span>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- メッセージ投稿フォーム -->
+<form id="post-message-form" method="post">
+    {% csrf_token %}
+    <textarea name="message_text" required></textarea>
+    <button type="submit">送信</button>
+</form>
+
+<script src="{% static 'js/chat.js' %}"></script>  <!-- ここでstaticタグを使用 -->
+{% endblock %}

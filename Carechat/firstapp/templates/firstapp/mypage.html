@@ -1,0 +1,13 @@
+{% extends "firstapp/base.html" %}
+{% block content %}
+<h2>マイページ</h2>
+<!-- ユーザー情報表示 -->
+<p>メールアドレス: {{ user.email }}</p>
+<p>ニックネーム: {{ user.first_name }}</p>
+
+<!-- 情報編集へのリンク -->
+<a href="{% url 'firstapp:edit_profile' %}">プロフィール編集</a>
+
+<!-- アカウント削除機能 -->
+<!-- 実装が必要 -->
+{% endblock %}

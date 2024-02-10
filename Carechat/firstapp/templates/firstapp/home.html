@@ -1,0 +1,27 @@
+<!-- Carechat/Carechat/firstapp/templates/firstapp/home.html -->
+
+{% extends "firstapp/base.html" %} {% block content %}
+
+<h1>Welcome to the Home Page!</h1>
+
+<div>
+  <!-- マイページへの遷移ボタン -->
+  <a href="{% url 'firstapp:mypage' %}">マイページ</a>
+</div>
+
+<div>
+<!-- チャットルーム一覧への遷移ボタン -->
+<a href="{% url 'firstapp:chat_rooms' %}">チャットルーム一覧</a>
+</div>
+
+<div>
+  <!-- サポート機能への遷移ボタン -->
+  <a href="{% url 'firstapp:support' %}">サポート</a>
+</div>
+
+<div>
+  <!-- ログアウトボタン -->
+  <a href="{% url 'firstapp:logout' %}">ログアウト</a>
+</div>
+
+{% endblock %}

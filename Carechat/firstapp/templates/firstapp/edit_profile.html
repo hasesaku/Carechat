@@ -1,0 +1,10 @@
+<!-- Carechat\firstapp\templates\firstapp\edit_profile.html -->
+{% extends "firstapp/base.html" %}
+{% block content %}
+<h2>プロフィール編集</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">更新</button>
+</form>
+{% endblock %}

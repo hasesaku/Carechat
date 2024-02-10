@@ -1,0 +1,10 @@
+<!-- start_screen.html -->
+{% extends "firstapp/base.html" %}
+
+{% block content %}
+<h1>ようこそ！</h1>
+<div>
+    <a href="{% url 'firstapp:register' %}">新規ユーザー登録</a>
+    <a href="{% url 'firstapp:login' %}">ログイン</a>
+</div>
+{% endblock %}

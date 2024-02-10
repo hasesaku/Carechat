@@ -1,0 +1,15 @@
+{% extends "firstapp/base.html" %}
+
+{% block content %}
+    <h2>新規ユーザー登録</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="email">メールアドレス:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">パスワード:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <label for="nickname">ニックネーム:</label><br>
+        <input type="text" id="nickname" name="nickname" required><br>
+        <input type="submit" value="登録">
+    </form>
+{% endblock %}

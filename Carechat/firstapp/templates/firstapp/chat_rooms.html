@@ -1,0 +1,11 @@
+{% extends "firstapp/base.html" %}
+{% block content %}
+<h1>チャットルーム一覧</h1>
+<div id="chat-rooms-list">
+    {% for room in rooms %}
+    <div class="chat-room">
+        <a href="{% url 'firstapp:chat_room' room.id %}">{{ room.name }}</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
